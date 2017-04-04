@@ -1,0 +1,6 @@
+framework module Pods_SuperGuideTests {
+  umbrella header "Pods-SuperGuideTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
