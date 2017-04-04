@@ -7,11 +7,18 @@
 //
 
 import Foundation
+import UIKit
 
 struct Channel {
     let id: Int
     let title: String
     let programme: [Program]
+    
+    var fullWidth: CGFloat {
+        return programme.reduce(0, { (result, program) -> CGFloat in
+            return result + program.cellSize.width
+        })
+    }
     
     init?(json: JSON) {
         guard

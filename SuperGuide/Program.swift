@@ -7,11 +7,20 @@
 //
 
 import Foundation
+import UIKit
 
 struct Program {
     let title: String
     let startDate: Date
     let endDate: Date
+    
+    var duration: Int {
+        return Int(endDate.timeIntervalSince(startDate)) / 60
+    }
+    
+    var cellSize: CGSize {
+        return CGSize(width: duration * 10, height: 50)
+    }
     
     static let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
